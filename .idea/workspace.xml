@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f19acae3-5424-4507-8373-c0cfe846148c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Class" />
+        <option value="Kotlin File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1gYJo37B05b0bpu8DdOSW1PTTyA" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RunManager">
+    <configuration name="MainProgram" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="liberica-1.8" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="MainProgram" />
+      <module name="UniDash.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="liberica-1.8" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="MainProgram" />
+      <module name="UniDash.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f19acae3-5424-4507-8373-c0cfe846148c" name="Default Changelist" comment="" />
+      <created>1598285764297</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1598285764297</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="424" y="213" width="1071" height="724" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598290214487">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="424" y="213" width="1071" height="724" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@0.23.1920.1057" timestamp="1598290214487" />
+    <state x="656" y="233" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog" timestamp="1598286579104">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="656" y="233" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@0.23.1920.1057" timestamp="1598286579104" />
+    <state width="1878" height="289" key="GridCell.Tab.0.bottom" timestamp="1598295839239">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1558" height="289" key="GridCell.Tab.0.bottom/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@-1600.92.1600.877" timestamp="1598291155220" />
+    <state width="1878" height="289" key="GridCell.Tab.0.bottom/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@0.23.1920.1057" timestamp="1598295839239" />
+    <state width="1878" height="289" key="GridCell.Tab.0.center" timestamp="1598295839238">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1558" height="289" key="GridCell.Tab.0.center/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@-1600.92.1600.877" timestamp="1598291155219" />
+    <state width="1878" height="289" key="GridCell.Tab.0.center/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@0.23.1920.1057" timestamp="1598295839238" />
+    <state width="1878" height="289" key="GridCell.Tab.0.left" timestamp="1598295839237">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1558" height="289" key="GridCell.Tab.0.left/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@-1600.92.1600.877" timestamp="1598291155218" />
+    <state width="1878" height="289" key="GridCell.Tab.0.left/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@0.23.1920.1057" timestamp="1598295839237" />
+    <state width="1878" height="289" key="GridCell.Tab.0.right" timestamp="1598295839238">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1558" height="289" key="GridCell.Tab.0.right/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@-1600.92.1600.877" timestamp="1598291155220" />
+    <state width="1878" height="289" key="GridCell.Tab.0.right/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@0.23.1920.1057" timestamp="1598295839238" />
+    <state width="1878" height="211" key="GridCell.Tab.1.bottom" timestamp="1598294150616">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="211" key="GridCell.Tab.1.bottom/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@0.23.1920.1057" timestamp="1598294150616" />
+    <state width="1878" height="211" key="GridCell.Tab.1.center" timestamp="1598294150615">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="211" key="GridCell.Tab.1.center/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@0.23.1920.1057" timestamp="1598294150615" />
+    <state width="1878" height="211" key="GridCell.Tab.1.left" timestamp="1598294150615">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="211" key="GridCell.Tab.1.left/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@0.23.1920.1057" timestamp="1598294150615" />
+    <state width="1878" height="211" key="GridCell.Tab.1.right" timestamp="1598294150616">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="211" key="GridCell.Tab.1.right/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@0.23.1920.1057" timestamp="1598294150616" />
+    <state x="-1119" y="124" key="SettingsEditor" timestamp="1598289718630">
+      <screen x="-1600" y="92" width="1600" height="877" />
+    </state>
+    <state x="-1119" y="124" key="SettingsEditor/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@-1600.92.1600.877" timestamp="1598289718630" />
+    <state x="469" y="190" key="SettingsEditor/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@0.23.1920.1057" timestamp="1598286266744" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/UniDash$MainProgram.ic" NAME="MainProgram Coverage Results" MODIFIED="1598294307910" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+</project>
