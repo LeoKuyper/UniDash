@@ -67,30 +67,19 @@ class UniDashViewModel(val uniDash: UniDash): ViewModel(){
                 cost += 15000f
             }
         }
-
-
-
         for (st in personSubject){
 
             if (2 == st){
                 var count = 0
                 for (sb in subject){
                     if (sb.value.id == count){
-                        println("Subject link")
                         var costs = sb.value.hours * 400
                         cost += costs
                     }
                     count ++
                 }
-
-
             }
-
-
         }
-
-
-
         return cost
     }
 

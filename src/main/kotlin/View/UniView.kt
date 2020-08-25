@@ -323,7 +323,7 @@ class UniView: View() {
                         }
                     }
                     right = vbox {
-                        label ("new subjects"){
+                        label ("Create a new subject"){
                             style{
                                 textFill = Color.rgb(255, 255, 255)
                             }
@@ -357,7 +357,7 @@ class UniView: View() {
                                 }
                             }
 
-                            button("Add Person") {
+                            button("Add Subject") {
                                 action {
                                     println(uniDashViewModel.getSubjectsCount().toString() + " Before Add")
                                     uniDashViewModel.addSubject(name.value.toString(), code.value.toString(), credits.value.toInt(), hours.value.toInt(), price.value.toFloat())
@@ -469,7 +469,7 @@ class UniView: View() {
                                 }
                             }
 
-                            button("Add Person") {
+                            button("Add Subject") {
                                 action {
                                     println(uniDashViewModel.getRegisteredSubjectCount().toString() + " Before Add")
                                     uniDashViewModel.addSubjectToPerson(name.value.toInt(),id.value.toInt())
