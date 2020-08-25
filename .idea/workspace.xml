@@ -103,12 +103,13 @@
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.values.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab_i" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/last-build.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/last-build.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/MainProgram.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/MainProgram.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/MainView.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/View/UniView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/View/UniView.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/logic/Person.kt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/logic/Subject.kt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/logic/UniDash.kt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/logic/University.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/university/UniDash.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/university/UniDash.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/views/HomeView.kt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/views/PeopleView.kt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/views/PoolView.kt" beforeDir="false" />
@@ -249,29 +250,29 @@
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="746" y="350" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@0.23.1920.1057" timestamp="1598356579186" />
-    <state width="1191" height="237" key="GridCell.Tab.0.bottom" timestamp="1598365894519">
+    <state width="1191" height="237" key="GridCell.Tab.0.bottom" timestamp="1598373434177">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state width="1558" height="289" key="GridCell.Tab.0.bottom/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@-1600.92.1600.877" timestamp="1598291155220" />
-    <state width="1191" height="237" key="GridCell.Tab.0.bottom/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@0.23.1920.1057" timestamp="1598365894519" />
+    <state width="1191" height="237" key="GridCell.Tab.0.bottom/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@0.23.1920.1057" timestamp="1598373434177" />
     <state width="1194" height="289" key="GridCell.Tab.0.bottom/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@1920.66.1600.877" timestamp="1598355019616" />
-    <state width="1191" height="237" key="GridCell.Tab.0.center" timestamp="1598365894518">
+    <state width="1191" height="237" key="GridCell.Tab.0.center" timestamp="1598373434177">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state width="1558" height="289" key="GridCell.Tab.0.center/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@-1600.92.1600.877" timestamp="1598291155219" />
-    <state width="1191" height="237" key="GridCell.Tab.0.center/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@0.23.1920.1057" timestamp="1598365894518" />
+    <state width="1191" height="237" key="GridCell.Tab.0.center/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@0.23.1920.1057" timestamp="1598373434177" />
     <state width="1194" height="289" key="GridCell.Tab.0.center/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@1920.66.1600.877" timestamp="1598355019616" />
-    <state width="1191" height="237" key="GridCell.Tab.0.left" timestamp="1598365894517">
+    <state width="1191" height="237" key="GridCell.Tab.0.left" timestamp="1598373434175">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state width="1558" height="289" key="GridCell.Tab.0.left/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@-1600.92.1600.877" timestamp="1598291155218" />
-    <state width="1191" height="237" key="GridCell.Tab.0.left/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@0.23.1920.1057" timestamp="1598365894517" />
+    <state width="1191" height="237" key="GridCell.Tab.0.left/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@0.23.1920.1057" timestamp="1598373434175" />
     <state width="1194" height="289" key="GridCell.Tab.0.left/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@1920.66.1600.877" timestamp="1598355019615" />
-    <state width="1191" height="237" key="GridCell.Tab.0.right" timestamp="1598365894518">
+    <state width="1191" height="237" key="GridCell.Tab.0.right" timestamp="1598373434177">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state width="1558" height="289" key="GridCell.Tab.0.right/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@-1600.92.1600.877" timestamp="1598291155220" />
-    <state width="1191" height="237" key="GridCell.Tab.0.right/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@0.23.1920.1057" timestamp="1598365894518" />
+    <state width="1191" height="237" key="GridCell.Tab.0.right/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@0.23.1920.1057" timestamp="1598373434177" />
     <state width="1194" height="289" key="GridCell.Tab.0.right/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@1920.66.1600.877" timestamp="1598355019616" />
     <state width="939" height="211" key="GridCell.Tab.1.bottom" timestamp="1598364951660">
       <screen x="0" y="23" width="1920" height="1057" />
@@ -306,6 +307,10 @@
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="370" y="201" key="new project wizard/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@1920.66.1600.877" timestamp="1598348999667" />
+    <state x="626" y="258" width="670" height="676" key="search.everywhere.popup" timestamp="1598372628285">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="626" y="258" width="670" height="676" key="search.everywhere.popup/0.23.1920.1057/-1600.92.1600.877/1920.66.1600.877@0.23.1920.1057" timestamp="1598372628285" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/UniDash$MainProgram.ic" NAME="MainProgram Coverage Results" MODIFIED="1598294307910" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

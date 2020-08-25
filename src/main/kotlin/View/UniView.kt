@@ -1,5 +1,6 @@
 package View
 
+import javafx.beans.property.SimpleStringProperty
 import javafx.geometry.Pos
 import javafx.scene.paint.Color
 import javafx.scene.text.TextAlignment
@@ -8,8 +9,11 @@ import university.UniDash
 import university.UniDashViewModel
 
 class UniView: View() {
-
     val uniDashViewModel = UniDashViewModel(UniDash())
+
+
+    var people = SimpleStringProperty(uniDashViewModel.getAllPeople().toString()).value.toString()
+
 
     override val root = vbox {
         val subject = uniDashViewModel.subject.value
@@ -22,6 +26,19 @@ class UniView: View() {
                 useMaxHeight = true
 
                 label ("UniDash"){
+                    setPrefSize(200.0, 30.0)
+                    vboxConstraints {
+                        marginTop = 10.0
+                        marginBottom = 10.0
+                        alignment = Pos.CENTER
+                    }
+                    style{
+                        textFill = Color.rgb(255, 255, 255)
+                        textAlignment = TextAlignment.CENTER
+                    }
+                }
+
+                label (uniDashViewModel.getUniName()){
                     setPrefSize(200.0, 10.0)
                     vboxConstraints {
                         marginTop = 10.0
@@ -34,7 +51,19 @@ class UniView: View() {
                     }
                 }
 
-                label ("OpenWindow"){
+                label ("Subjects: " + uniDashViewModel.getSubjectsCount().toString()){
+                    setPrefSize(200.0, 10.0)
+                    vboxConstraints {
+                        marginTop = 10.0
+                        marginBottom = 10.0
+                        alignment = Pos.CENTER
+                    }
+                    style{
+                        textFill = Color.rgb(255, 255, 255)
+                        textAlignment = TextAlignment.CENTER
+                    }
+                }
+                label ("Diploma Students: " + uniDashViewModel.getDiStudentCount().toString()){
                     setPrefSize(200.0, 10.0)
                     vboxConstraints {
                         marginTop = 10.0
@@ -47,7 +76,7 @@ class UniView: View() {
                     }
                 }
 
-                label ("Subjects"){
+                label ("Degree Students: " + uniDashViewModel.getDeStudentCount().toString()){
                     setPrefSize(200.0, 10.0)
                     vboxConstraints {
                         marginTop = 10.0
@@ -60,7 +89,7 @@ class UniView: View() {
                     }
                 }
 
-                label ("Students"){
+                label ("Academic Staff: " + uniDashViewModel.getAcStaffCount().toString()){
                     setPrefSize(200.0, 10.0)
                     vboxConstraints {
                         marginTop = 10.0
@@ -73,7 +102,7 @@ class UniView: View() {
                     }
                 }
 
-                label ("Lecturers"){
+                label ("Administrative Staff: " + uniDashViewModel.getAdStaffCount().toString()){
                     setPrefSize(200.0, 10.0)
                     vboxConstraints {
                         marginTop = 10.0
@@ -86,7 +115,7 @@ class UniView: View() {
                     }
                 }
 
-                label ("Admin"){
+                label ("All people: " + people){
                     setPrefSize(200.0, 10.0)
                     vboxConstraints {
                         marginTop = 10.0
@@ -131,6 +160,17 @@ class UniView: View() {
                         label ("Users"){
                             style{
                                 backgroundColor += Color.WHITE
+                            }
+                        }
+
+                        button("GetName") {
+                            action {
+                                println("Get name")
+                                uniDashViewModel.getName()
+                                uniDashViewModel.addPerson("Leo", 0)
+                                println(uniDashViewModel.getDiStudentCount())
+                                onRefresh()
+
                             }
                         }
 
@@ -255,7 +295,7 @@ class UniView: View() {
                         }
                     }
                     right = vbox {
-                        label ("Subjects"){
+                        label ("Add subject to people"){
                             style{
                                 backgroundColor += Color.WHITE
                             }
