@@ -1,18 +1,19 @@
 package View
 
 import javafx.beans.property.SimpleStringProperty
+import javafx.collections.ObservableList
 import javafx.geometry.Pos
 import javafx.scene.paint.Color
 import javafx.scene.text.TextAlignment
+import person.Person
+import subject.Subject
 import tornadofx.*
 import university.UniDash
 import university.UniDashViewModel
 
 class UniView: View() {
+
     val uniDashViewModel = UniDashViewModel(UniDash())
-
-
-    var people = SimpleStringProperty(uniDashViewModel.getAllPeople().toString()).value.toString()
 
 
     override val root = vbox {
@@ -115,7 +116,7 @@ class UniView: View() {
                     }
                 }
 
-                label ("All people: " + people){
+                label ("All people: " + uniDashViewModel.getAllPeople().toString()){
                     setPrefSize(200.0, 10.0)
                     vboxConstraints {
                         marginTop = 10.0
@@ -162,16 +163,36 @@ class UniView: View() {
                                 backgroundColor += Color.WHITE
                             }
                         }
-
-                        button("GetName") {
-                            action {
-                                println("Get name")
-                                uniDashViewModel.getName()
-                                uniDashViewModel.addPerson("Leo", 0)
-                                println(uniDashViewModel.getDiStudentCount())
-                                onRefresh()
-
+                        val model = ViewModel()
+                        val search = model.bind { SimpleStringProperty() }
+                        form{
+                            fieldset {
+                                field("Search"){
+                                   textfield(search)
+                                }
                             }
+
+                            button("Search") {
+                                action {
+                                    uniDashViewModel.search(search.value.toString())
+                                    println("Search")
+                                    search.value = ""
+                                }
+                            }
+                        }
+
+
+                        tableview<Person> {
+                            items = listOf(
+                                    Person(0,"Jake", 0),
+                                    Person(1,"Jake", 1),
+                                    Person(2,"Jake", 2),
+                                    Person(3,"Jake", 3)
+                            ).observable()
+
+                            column("ID",Person::idProperty)
+                            column("NAME",Person::name)
+                            column("TYPE",Person::type)
                         }
 
                         setPrefSize(450.0, 320.0)
@@ -192,6 +213,20 @@ class UniView: View() {
                                 backgroundColor += Color.WHITE
                             }
                         }
+
+                       tableview<Subject> {
+                           items = listOf(
+                                   Subject("IDV", "IDV303", 100, 40, 300f),
+                                   Subject("IXT", "IXT303", 100, 40, 300f)
+                           ).observable()
+
+                           column("NAME",Subject::name)
+                           column("CODE",Subject::code)
+                           column("CREDITS",Subject::credits)
+                           column("HOURS",Subject::hours)
+                           column("PRICE",Subject::price)
+
+                       }
 
                         setPrefSize(450.0, 302.0)
 
@@ -225,6 +260,36 @@ class UniView: View() {
                         label ("Register people"){
                             style{
                                 backgroundColor += Color.WHITE
+                            }
+                        }
+
+                        val model = ViewModel()
+                        val name = model.bind { SimpleStringProperty() }
+                        val type = model.bind { SimpleStringProperty() }
+
+
+                        form{
+                            fieldset {
+                                field("Name"){
+                                    textfield(name)
+                                }
+
+                                field("Type"){
+                                    textfield(type)
+                                }
+                            }
+
+                            button("Add Person") {
+                                action {
+                                    println(uniDashViewModel.getAllPeople().toString() + " Before Add")
+                                    uniDashViewModel.addPerson(name.value.toString(),type.value.toInt())
+                                    println("Added Person")
+
+                                    println(uniDashViewModel.getAllPeople().toString() + " After Add")
+                                    name.value = ""
+                                    type.value = ""
+
+                                }
                             }
                         }
 

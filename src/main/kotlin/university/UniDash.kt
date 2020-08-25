@@ -5,6 +5,7 @@ import javafx.beans.property.SimpleObjectProperty
 import person.Person
 import subject.Subject
 import tornadofx.ViewModel
+import java.awt.List
 
 class UniDash {
 
@@ -23,24 +24,19 @@ class UniDashViewModel(val uniDash: UniDash): ViewModel(){
 
     init{
         university.set(University("Lion Institute", 100000f))
-        subject.value.add(SimpleObjectProperty(Subject("IDV", "IDV303", 100, 40, 300f)))
-        subject.value.add(SimpleObjectProperty(Subject("IXT", "IXT303", 100, 40, 300f)))
 
-        person.value.add(SimpleObjectProperty(Person(0, "Jake", 0)))
-        person.value.add(SimpleObjectProperty(Person(0, "Jake", 0)))
-        person.value.add(SimpleObjectProperty(Person(0, "Jake", 0)))
+        addSubject("IDV", "IDV303", 100, 40, 300f)
+        addSubject("IXT", "IXT303", 100, 40, 300f)
 
-        person.value.add(SimpleObjectProperty(Person(0, "Jake", 1)))
-        person.value.add(SimpleObjectProperty(Person(0, "Jake", 1)))
-        person.value.add(SimpleObjectProperty(Person(0, "Jake", 1)))
+        addPerson("Jake", 0)
 
-        person.value.add(SimpleObjectProperty(Person(0, "Jake", 2)))
-        person.value.add(SimpleObjectProperty(Person(0, "Jake", 2)))
-        person.value.add(SimpleObjectProperty(Person(0, "Jake", 2)))
+        addPerson("Jake", 1)
 
-        person.value.add(SimpleObjectProperty(Person(0, "Jake", 3)))
-        person.value.add(SimpleObjectProperty(Person(0, "Jake", 3)))
-        person.value.add(SimpleObjectProperty(Person(0, "Jake", 3)))
+        addPerson("Jake", 2)
+
+        addPerson("Jake", 3)
+
+
     }
 
     fun start(){
@@ -95,6 +91,11 @@ class UniDashViewModel(val uniDash: UniDash): ViewModel(){
         return count
     }
 
+    fun GetPeopleByNo(number:Int): Person{
+        return person[number].value
+    }
+
+
     fun getAllPeople(): Int{
         return person.size
     }
@@ -107,8 +108,26 @@ class UniDashViewModel(val uniDash: UniDash): ViewModel(){
 
     fun addPerson(name: String, type: Int){
         var position = person.size
-        position++
         person.value.add(SimpleObjectProperty(Person(position, name, type)))
+        position++
+
+    }
+
+    fun addSubject(name: String, code: String,  credits: Int, hours: Int,  price: Float){
+        subject.value.add(SimpleObjectProperty(Subject(name,code,credits,hours,price)))
+
+    }
+
+    fun search(data:String){
+
+        for (student in person){
+            if (student.value.id.toString() == data){
+                println( student.value.name + " ID: " + student.value.id.toString()+ " Type: " + student.value.type.toString())
+            }
+            if (student.value.name.toLowerCase() == data.toLowerCase()){
+                println( student.value.name + " ID: " + student.value.id.toString()+ " Type: " + student.value.type.toString())
+            }
+        }
     }
 
 
