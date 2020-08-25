@@ -22,6 +22,9 @@ class UniDashViewModel(val uniDash: UniDash): ViewModel(){
     var subject = bind {uniDash.subjectsProperty}
     var person = bind {uniDash.personProperty  }
 
+    var personSubject = Array(0) {0}
+    var subjectPerson = Array(0) {0}
+
     init{
         university.set(University("Lion Institute", 100000f))
 
@@ -36,11 +39,96 @@ class UniDashViewModel(val uniDash: UniDash): ViewModel(){
 
         addPerson("Jake", 3)
 
+        addSubjectToPerson(0,1)
+        addSubjectToPerson(0,1)
+        addSubjectToPerson(2,1)
+        addSubjectToPerson(2,0)
+
+        getPersonSubjects(0)
 
     }
 
-    fun start(){
+    fun getMoneyFees():Float{
+        var cost = 0f
+        for (su in subjectPerson){
+            for (sub in subject){
+                if (su == sub.value.id)
+                    cost += sub.value.price
+            }
+        }
 
+        return cost
+    }
+
+    fun getStaffPayment():Float{
+        var cost = 0f
+        for (st in person){
+            if (st.value.type ==3 ){
+                cost += 15000f
+            }
+        }
+
+
+
+        for (st in personSubject){
+
+            if (2 == st){
+                var count = 0
+                for (sb in subject){
+                    if (sb.value.id == count){
+                        println("Subject link")
+                        var costs = sb.value.hours * 400
+                        cost += costs
+                    }
+                    count ++
+                }
+
+
+            }
+
+
+        }
+
+
+
+        return cost
+    }
+
+
+    fun getRegisteredSubjectCount() :Int{
+        return subjectPerson.size
+    }
+
+    fun getPersonSubjects(id: Int):String{
+        var count = 0
+        var subjects = Array(0) {0}
+        println("id $id")
+
+        for (person in personSubject){
+            println("Person Id " + person)
+
+            if (person == id){
+
+                subjects += subjectPerson[count]
+            }
+            count ++
+        }
+        println(GetPeopleByNo(id).name.toString() + " " + subjects.toString())
+        return GetPeopleByNo(id).name.toString() + " " + subjects
+
+
+    }
+
+    fun addSubjectToPerson(person: Int, subject: Int){
+
+        personSubject += person
+        subjectPerson += subject
+        println(personSubject.size)
+
+    }
+
+    fun getUniPool(): Float{
+        return university.value.poolProperty.value
     }
 
     fun getUniName(): String{
@@ -114,8 +202,9 @@ class UniDashViewModel(val uniDash: UniDash): ViewModel(){
     }
 
     fun addSubject(name: String, code: String,  credits: Int, hours: Int,  price: Float){
-        subject.value.add(SimpleObjectProperty(Subject(name,code,credits,hours,price)))
-
+        var position = subject.size
+        subject.value.add(SimpleObjectProperty(Subject(position,name,code,credits,hours,price)))
+        position
     }
 
     fun search(data:String){
