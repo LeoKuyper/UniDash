@@ -29,11 +29,6 @@ Wait a moment
 
 4.The project should now be ready to run
 
-## Built With
-
-* [Xamarin Forms](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/)
-* [Xamarin Essential](https://docs.microsoft.com/en-us/xamarin/essentials/)
-
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
