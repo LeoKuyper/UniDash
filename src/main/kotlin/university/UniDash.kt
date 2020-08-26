@@ -31,11 +31,12 @@ class UniDashViewModel(val uniDash: UniDash): ViewModel(){
         addSubject("IDV", "IDV303", 100, 40, 300f)
         addSubject("IXT", "IXT303", 100, 40, 300f)
 
-        addPerson("Jake", 0)
+        addPerson("Ken", 0)
 
-        addPerson("Jake", 1)
+        addPerson("Rocco", 1)
+        addPerson("Ollie", 1)
 
-        addPerson("Jake", 2)
+        addPerson("Jesse", 2)
 
         addPerson("Jake", 3)
 
@@ -57,7 +58,7 @@ class UniDashViewModel(val uniDash: UniDash): ViewModel(){
             }
         }
 
-        return cost
+        return cost*4
     }
 
     fun getStaffPayment():Float{
@@ -197,7 +198,6 @@ class UniDashViewModel(val uniDash: UniDash): ViewModel(){
     }
 
     fun search(data:String){
-
         for (student in person){
             if (student.value.id.toString() == data){
                 println( student.value.name + " ID: " + student.value.id.toString()+ " Type: " + student.value.type.toString())
@@ -207,8 +207,4 @@ class UniDashViewModel(val uniDash: UniDash): ViewModel(){
             }
         }
     }
-
-
-
-
 }

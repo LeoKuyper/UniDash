@@ -201,10 +201,11 @@ class UniView: View() {
 
                         tableview<Person> {
                             items = listOf(
-                                    Person(0,"Jake", 0),
-                                    Person(1,"Jake", 1),
-                                    Person(2,"Jake", 2),
-                                    Person(3,"Jake", 3)
+                                    Person(0,"Ken", 0),
+                                    Person(1,"Rocco", 1),
+                                    Person(2,"Ollie", 1),
+                                    Person(3,"Jesse", 2),
+                                    Person(4,"Jake", 3)
                             ).observable()
 
                             column("ID",Person::idProperty)
@@ -237,6 +238,7 @@ class UniView: View() {
                                    Subject(1,"IXT", "IXT303", 100, 40, 300f)
                            ).observable()
 
+                           column("ID",Subject::idProperty)
                            column("NAME",Subject::name)
                            column("CODE",Subject::code)
                            column("CREDITS",Subject::credits)
@@ -265,9 +267,7 @@ class UniView: View() {
                         marginBottom = 20.0
                         alignment = Pos.CENTER
                     }
-                    style{
-                        backgroundColor += Color.rgb(142, 172, 191)
-                    }
+
 
                 }
 
@@ -394,9 +394,7 @@ class UniView: View() {
                         marginBottom = 20.0
                         alignment = Pos.CENTER
                     }
-                    style{
-                        backgroundColor += Color.rgb(142, 172, 191)
-                    }
+
 
                 }
 
@@ -503,9 +501,7 @@ class UniView: View() {
                         marginBottom = 30.0
                         alignment = Pos.CENTER
                     }
-                    style{
-                        backgroundColor += Color.rgb(142, 172, 191)
-                    }
+
 
                 }
 
