@@ -1,5 +1,7 @@
 package View
 
+import javafx.beans.property.SimpleListProperty
+import javafx.beans.property.SimpleObjectProperty
 import javafx.beans.property.SimpleStringProperty
 import javafx.collections.ObservableList
 import javafx.geometry.Pos
@@ -15,11 +17,32 @@ class UniView: View() {
 
     val uniDashViewModel = UniDashViewModel(UniDash())
 
+    //Bindings
+    var fund = SimpleStringProperty()
+    var subjects = SimpleStringProperty()
+    var diploma = SimpleStringProperty()
+    var degree = SimpleStringProperty()
+    var acad = SimpleStringProperty()
+    var admin = SimpleStringProperty()
+    var allPeople = SimpleStringProperty()
+    val people = SimpleListProperty<SimpleObjectProperty<Person>>()
+
+    fun update(){
+        fund.set("Funds R" + uniDashViewModel.getUniPool().toString())
+        subjects.set("Subjects: " + uniDashViewModel.getSubjectsCount().toString())
+        diploma.set("Diploma Students: " + uniDashViewModel.getDiStudentCount().toString())
+        degree.set("Degree Students: " + uniDashViewModel.getDeStudentCount().toString())
+        acad.set("Academic Staff: " + uniDashViewModel.getAcStaffCount().toString())
+        admin.set("Administrative Staff: " + uniDashViewModel.getAdStaffCount().toString())
+        allPeople.set("All people: " + uniDashViewModel.getAllPeople().toString())
+        people.set(uniDashViewModel.getPeople())
+    }
 
     override val root = vbox {
         val subject = uniDashViewModel.subject.value
         borderpane {
-
+            update()
+            print((people[0].name))
 
 
             left = vbox() {
@@ -52,7 +75,8 @@ class UniView: View() {
                     }
                 }
 
-                label ("Funds R" + uniDashViewModel.getUniPool().toString()){
+                label (){
+                    textProperty().bind(fund)
                     setPrefSize(200.0, 10.0)
                     vboxConstraints {
                         marginTop = 10.0
@@ -65,7 +89,8 @@ class UniView: View() {
                     }
                 }
 
-                label ("Subjects: " + uniDashViewModel.getSubjectsCount().toString()){
+                label (){
+                    textProperty().bind(subjects)
                     setPrefSize(200.0, 10.0)
                     vboxConstraints {
                         marginTop = 10.0
@@ -77,33 +102,8 @@ class UniView: View() {
                         textAlignment = TextAlignment.CENTER
                     }
                 }
-                label ("Diploma Students: " + uniDashViewModel.getDiStudentCount().toString()){
-                    setPrefSize(200.0, 10.0)
-                    vboxConstraints {
-                        marginTop = 10.0
-                        marginBottom = 10.0
-                        alignment = Pos.CENTER
-                    }
-                    style{
-                        textFill = Color.rgb(255, 255, 255)
-                        textAlignment = TextAlignment.CENTER
-                    }
-                }
-
-                label ("Degree Students: " + uniDashViewModel.getDeStudentCount().toString()){
-                    setPrefSize(200.0, 10.0)
-                    vboxConstraints {
-                        marginTop = 10.0
-                        marginBottom = 10.0
-                        alignment = Pos.CENTER
-                    }
-                    style{
-                        textFill = Color.rgb(255, 255, 255)
-                        textAlignment = TextAlignment.CENTER
-                    }
-                }
-
-                label ("Academic Staff: " + uniDashViewModel.getAcStaffCount().toString()){
+                label (){
+                    textProperty().bind(diploma)
                     setPrefSize(200.0, 10.0)
                     vboxConstraints {
                         marginTop = 10.0
@@ -116,7 +116,8 @@ class UniView: View() {
                     }
                 }
 
-                label ("Administrative Staff: " + uniDashViewModel.getAdStaffCount().toString()){
+                label (){
+                    textProperty().bind(degree)
                     setPrefSize(200.0, 10.0)
                     vboxConstraints {
                         marginTop = 10.0
@@ -129,7 +130,36 @@ class UniView: View() {
                     }
                 }
 
-                label ("All people: " + uniDashViewModel.getAllPeople().toString()){
+                label (){
+                    textProperty().bind(acad)
+                    setPrefSize(200.0, 10.0)
+                    vboxConstraints {
+                        marginTop = 10.0
+                        marginBottom = 10.0
+                        alignment = Pos.CENTER
+                    }
+                    style{
+                        textFill = Color.rgb(255, 255, 255)
+                        textAlignment = TextAlignment.CENTER
+                    }
+                }
+
+                label (){
+                    textProperty().bind(admin)
+                    setPrefSize(200.0, 10.0)
+                    vboxConstraints {
+                        marginTop = 10.0
+                        marginBottom = 10.0
+                        alignment = Pos.CENTER
+                    }
+                    style{
+                        textFill = Color.rgb(255, 255, 255)
+                        textAlignment = TextAlignment.CENTER
+                    }
+                }
+
+                label (){
+                    textProperty().bind(allPeople)
                     setPrefSize(200.0, 10.0)
                     vboxConstraints {
                         marginTop = 10.0
@@ -193,6 +223,7 @@ class UniView: View() {
                                     uniDashViewModel.search(search.value.toString())
                                     println("Search")
                                     search.value = ""
+                                    update()
                                 }
                             }
 
@@ -306,6 +337,8 @@ class UniView: View() {
                                     name.value = ""
                                     type.value = ""
 
+                                    update()
+
                                 }
                             }
                         }
@@ -369,6 +402,7 @@ class UniView: View() {
                                     credits.value = ""
                                     hours.value = ""
                                     price.value = ""
+                                    update()
 
                                 }
                             }
@@ -476,6 +510,7 @@ class UniView: View() {
                                     println(uniDashViewModel.getRegisteredSubjectCount().toString() + " After Add")
                                     name.value = ""
                                     id.value = ""
+                                    update()
 
                                 }
                             }

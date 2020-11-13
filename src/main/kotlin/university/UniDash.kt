@@ -49,6 +49,11 @@ class UniDashViewModel(val uniDash: UniDash): ViewModel(){
 
     }
 
+    fun getPeople(): SimpleListProperty<SimpleObjectProperty<Person>> {
+        return person
+    }
+
+
     fun getMoneyFees():Float{
         var cost = 0f
         for (su in subjectPerson){
