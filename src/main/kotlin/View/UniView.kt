@@ -1,5 +1,6 @@
 package View
 
+import javafx.beans.property.SimpleIntegerProperty
 import javafx.beans.property.SimpleListProperty
 import javafx.beans.property.SimpleObjectProperty
 import javafx.beans.property.SimpleStringProperty
@@ -26,6 +27,11 @@ class UniView: View() {
     var admin = SimpleStringProperty()
     var allPeople = SimpleStringProperty()
     val people = SimpleListProperty<SimpleObjectProperty<Person>>()
+    val moneyFees = SimpleStringProperty()
+    val staffPay = SimpleStringProperty()
+    val endMonthPro = SimpleStringProperty()
+    val endPoolFunds = SimpleStringProperty()
+    val peopleList = mutableListOf("Test").asObservable()
 
     fun update(){
         fund.set("Funds R" + uniDashViewModel.getUniPool().toString())
@@ -36,6 +42,23 @@ class UniView: View() {
         admin.set("Administrative Staff: " + uniDashViewModel.getAdStaffCount().toString())
         allPeople.set("All people: " + uniDashViewModel.getAllPeople().toString())
         people.set(uniDashViewModel.getPeople())
+        println(uniDashViewModel.getPersonByNo(1)?.name)
+        val num = uniDashViewModel.getAllPeople()
+        peopleList.clear()
+        for (i in people){
+            println(i.value.name)
+            peopleList.add(i.value.name)
+        }
+
+        println(peopleList)
+
+
+        moneyFees.set("Students will pay R" + uniDashViewModel.getMoneyFees().toString())
+        staffPay.set("Staff will be Payed R" + uniDashViewModel.getStaffPayment().toString())
+        var projection =   uniDashViewModel.getMoneyFees() - uniDashViewModel.getStaffPayment()
+        endMonthPro.set("End of Month Projection R$projection")
+        var poolProjected = uniDashViewModel.getUniPool() - uniDashViewModel.getStaffPayment() - uniDashViewModel.getMoneyFees()
+        endPoolFunds.set("Projected Pool Funds R" + poolProjected)
     }
 
     override val root = vbox {
@@ -212,10 +235,12 @@ class UniView: View() {
                             setPrefSize(50.0, 10.0)
                             fieldset {
                                 field("Search"){
+                                    style{
+                                        textFill = Color.rgb(255, 255, 255)
+                                    }
                                    textfield(search)
-
-
                                 }
+
                             }
 
                             button("Search") {
@@ -225,23 +250,16 @@ class UniView: View() {
                                     search.value = ""
                                     update()
                                 }
+
                             }
 
                         }
 
 
-                        tableview<Person> {
-                            items = listOf(
-                                    Person(0,"Ken", 0),
-                                    Person(1,"Rocco", 1),
-                                    Person(2,"Ollie", 1),
-                                    Person(3,"Jesse", 2),
-                                    Person(4,"Jake", 3)
-                            ).observable()
+                        listview<String> {
 
-                            column("ID",Person::idProperty)
-                            column("NAME",Person::name)
-                            column("TYPE",Person::type)
+                            items.setAll(peopleList)
+
                         }
 
                         setPrefSize(450.0, 320.0)
@@ -441,25 +459,28 @@ class UniView: View() {
                             }
                         }
 
-                        label ("Students will pay R" + uniDashViewModel.getMoneyFees().toString()){
+                        label (){
+                            textProperty().bind(moneyFees)
                             style{
                                 textFill = Color.rgb(255, 255, 255)
                             }
                         }
 
-                        label ("Staff will be Payed R" + uniDashViewModel.getStaffPayment().toString()){
+                        label (){
+                            textProperty().bind(staffPay)
                             style{
                                 textFill = Color.rgb(255, 255, 255)
                             }
                         }
-                        var projection =   uniDashViewModel.getMoneyFees() - uniDashViewModel.getStaffPayment()
-                        label ("End of Month Projection R" + projection.toString()){
+                        label (){
+                            textProperty().bind(endMonthPro)
                             style{
                                 textFill = Color.rgb(255, 255, 255)
                             }
                         }
-                        var poolProjected = uniDashViewModel.getUniPool() - uniDashViewModel.getStaffPayment() - uniDashViewModel.getMoneyFees()
-                        label ("Projected Pool Funds R" + poolProjected.toString()){
+
+                        label (){
+                            textProperty().bind(endPoolFunds)
                             style{
                                 textFill = Color.rgb(255, 255, 255)
                             }

@@ -49,6 +49,10 @@ class UniDashViewModel(val uniDash: UniDash): ViewModel(){
 
     }
 
+    fun getPersonByNo(number:Int): Person? {
+        return person[number].value
+    }
+
     fun getPeople(): SimpleListProperty<SimpleObjectProperty<Person>> {
         return person
     }
