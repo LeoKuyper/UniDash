@@ -1,9 +1,6 @@
 package View
 
-import javafx.beans.property.SimpleIntegerProperty
-import javafx.beans.property.SimpleListProperty
-import javafx.beans.property.SimpleObjectProperty
-import javafx.beans.property.SimpleStringProperty
+import javafx.beans.property.*
 import javafx.collections.ObservableList
 import javafx.geometry.Pos
 import javafx.scene.paint.Color
@@ -31,7 +28,12 @@ class UniView: View() {
     val staffPay = SimpleStringProperty()
     val endMonthPro = SimpleStringProperty()
     val endPoolFunds = SimpleStringProperty()
-    val peopleList = mutableListOf("Test").asObservable()
+    val peopleList = SimpleStringProperty()
+    val subjectList = SimpleStringProperty()
+
+    var debug = SimpleStringProperty()
+    var searchBar = SimpleStringProperty()
+
 
     fun update(){
         fund.set("Funds R" + uniDashViewModel.getUniPool().toString())
@@ -42,16 +44,81 @@ class UniView: View() {
         admin.set("Administrative Staff: " + uniDashViewModel.getAdStaffCount().toString())
         allPeople.set("All people: " + uniDashViewModel.getAllPeople().toString())
         people.set(uniDashViewModel.getPeople())
+
         println(uniDashViewModel.getPersonByNo(1)?.name)
         val num = uniDashViewModel.getAllPeople()
-        peopleList.clear()
+
+
+        peopleList.set("")
         for (i in people){
-            println(i.value.name)
-            peopleList.add(i.value.name)
+            if (searchBar.value == ""){
+                println(i.value.name)
+                var type = ""
+                if (i.value.type == 0){
+                    type = " Diploma Student "
+                }
+                if (i.value.type == 1){
+                    type = " Degree Student "
+                }
+                if (i.value.type == 2){
+                    type = " Academic Staff "
+                }
+                if (i.value.type == 3){
+                    type = " Administrative Staff "
+                }
+
+                if (peopleList.value == ""){
+                    peopleList.set( i.value.name + " | ID: " + i.value.id + " | " + type + "| has " + uniDashViewModel.getPersonSubjects(i.value.id) + " Subjects")
+                } else{
+                    peopleList.set(peopleList.value.toString() + '\n' + i.value.name + " | ID: " + i.value.id + " | " + type + "| has " + uniDashViewModel.getPersonSubjects(i.value.id) + " Subjects")
+                }
+            }else{
+                println("Search")
+                if (i.value.name.toLowerCase() == searchBar.value.toLowerCase() ){
+                    println(i.value.name)
+                    var type = ""
+                    if (i.value.type == 0){
+                        type = " Diploma Student "
+                    }
+                    if (i.value.type == 1){
+                        type = " Degree Student "
+                    }
+                    if (i.value.type == 2){
+                        type = " Academic Staff "
+                    }
+                    if (i.value.type == 3){
+                        type = " Administrative Staff "
+                    }
+
+                    if (peopleList.value == ""){
+                        peopleList.set( i.value.name + " | " + type + "| has " + uniDashViewModel.getPersonSubjects(i.value.id) + " Subjects")
+                    } else{
+                        peopleList.set(peopleList.value.toString() + '\n' + i.value.name + " | " + type + "| has " + uniDashViewModel.getPersonSubjects(i.value.id) + " Subjects")
+                    }
+                }
+            }
+
+
         }
 
         println(peopleList)
+        subjectList.set("")
+        var sub = uniDashViewModel.getSubjectsCount()
+        var i = 0
+        while (i < sub){
+            var str = ""
+            str = "Name: " + uniDashViewModel.getSubjectsName(i) + " |ID: " + i.toString()  + " |Code: " + uniDashViewModel.getSubjectsCode(i) + " |Credits: " + uniDashViewModel.getSubjectsCredits(i) + " |Hours " + uniDashViewModel.getSubjectsHours(i) + " |R " + uniDashViewModel.getSubjectsPrice(i)
+            println(str)
 
+            if (subjectList.value == ""){
+                subjectList.set(str)
+            } else{
+                subjectList.set(subjectList.value + '\n'+str)
+            }
+            println(i)
+            i++
+        }
+        println(subjectList.value)
 
         moneyFees.set("Students will pay R" + uniDashViewModel.getMoneyFees().toString())
         staffPay.set("Staff will be Payed R" + uniDashViewModel.getStaffPayment().toString())
@@ -62,6 +129,8 @@ class UniView: View() {
     }
 
     override val root = vbox {
+        searchBar.set("")
+//        debug.set("Debug Dialog"+ '\n' + "TEST TEST TEST")
         val subject = uniDashViewModel.subject.value
         borderpane {
             update()
@@ -247,6 +316,8 @@ class UniView: View() {
                                 action {
                                     uniDashViewModel.search(search.value.toString())
                                     println("Search")
+                                    debug.set(search.value.toString())
+                                    searchBar.set(search.value.toString())
                                     search.value = ""
                                     update()
                                 }
@@ -256,9 +327,9 @@ class UniView: View() {
                         }
 
 
-                        listview<String> {
-
-                            items.setAll(peopleList)
+                        textarea () {
+                            textProperty().bind(peopleList)
+                            isWrapText = true
 
                         }
 
@@ -281,18 +352,9 @@ class UniView: View() {
                             }
                         }
 
-                       tableview<Subject> {
-                           items = listOf(
-                                   Subject(0,"IDV", "IDV303", 100, 40, 300f),
-                                   Subject(1,"IXT", "IXT303", 100, 40, 300f)
-                           ).observable()
-
-                           column("ID",Subject::idProperty)
-                           column("NAME",Subject::name)
-                           column("CODE",Subject::code)
-                           column("CREDITS",Subject::credits)
-                           column("HOURS",Subject::hours)
-                           column("PRICE",Subject::price)
+                       textarea () {
+                           textProperty().bind(subjectList)
+                           isWrapText = true
 
                        }
 

@@ -113,7 +113,7 @@ class UniDashViewModel(val uniDash: UniDash): ViewModel(){
             count ++
         }
         println(GetPeopleByNo(id).name.toString() + " " + subjects.toString())
-        return GetPeopleByNo(id).name.toString() + " " + subjects
+        return subjects.size.toString()
 
 
     }
@@ -136,6 +136,27 @@ class UniDashViewModel(val uniDash: UniDash): ViewModel(){
 
     fun getSubjectsCount(): Int{
         return subject.size
+    }
+
+    fun getSubjectsName(id: Int): String{
+        println(subject[id].name)
+        return subject[id].value.name
+    }
+    fun getSubjectsCode(id: Int): String{
+        println(subject[id].name)
+        return subject[id].value.code
+    }
+    fun getSubjectsCredits(id: Int): String{
+        println(subject[id].name)
+        return subject[id].value.credits.toString()
+    }
+    fun getSubjectsHours(id: Int): String{
+        println(subject[id].name)
+        return subject[id].value.hours.toString()
+    }
+    fun getSubjectsPrice(id: Int): String{
+        println(subject[id].name)
+        return subject[id].value.price.toString()
     }
 
     fun getDiStudentCount(): Int{
